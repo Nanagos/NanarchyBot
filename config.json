@@ -1,0 +1,13 @@
+{
+  "mc": {
+    "host": "example: 2b2t.org",
+    "port": "25565",
+    "version": "1.16.5",
+    "username": "username",
+    "password": "password for cracked servers"
+  },
+  "dc": {
+    "token": "discord bot token",
+    "channel": "the channel for the link"
+  }
+}
