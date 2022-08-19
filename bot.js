@@ -26,12 +26,6 @@ function start() {
   dcBot.login(config.dc.token);
   //  Discord bot
   dcBot.on("message", onDiscordMessage);
-  
-  setInterval(() => {
-    const date = new Date(Date.now());
-    console.log(date.toLocaleString());
-  }, 60 * 1000);
-
 
   function login() {
     mcBot = mineflayer.createBot(options);
@@ -79,11 +73,13 @@ function start() {
     const { channel, author, content } = message;
     if(author.tag === dcBot.user.tag) return;
 
-    const text = util.removeIllegalSigns(`[Discord|${author.tag}] ${content}`);
-    if(text.length === 0) return;
+    const msg = util.removeIllegalSigns(content);
+    if(msg.length === 0) return;
+
+    const text = `[Discord|${author.tag}] ${msg}`;
 
     if(channel.id === config.dc.channel) {
-      mcBot.chat(text.substr(0, 128));
+      mcBot.chat(text.substr(0, 256);
     }
   }
 
